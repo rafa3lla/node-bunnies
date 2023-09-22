@@ -1,11 +1,15 @@
 // módulos internos, core modules e módulos externos
 
 const express = require("express")
+const path = require("path")
+
 
 const app = express()
 
+const caminho = path.join(__dirname, 'templates')
+
 app.get('/', (requisicao, resposta) => {
-    resposta.send("Seja bem-vindo(a) ao meu servidor!")
+    resposta.sendFile(`${caminho}/index.html`)
 })
 
 app.listen(3000, () => {
