@@ -9,7 +9,8 @@ const app = express()
 const caminho = path.join(__dirname, 'templates')
 
 app.get('/usuarios/:id', (requisicao, resposta) => {
-    const id = 1
+    const id = requisicao.params.id
+    console.log(`o usuário ${id} está desaparecido.`)
     
     resposta.sendFile(`${caminho}/usuarios.html`)
 })
